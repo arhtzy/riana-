@@ -1,0 +1,60 @@
+/* Style untuk canvas */
+canvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2); /* Latar belakang transparan */
+  z-index: 0; /* Pastikan canvas berada di bawah teks */
+}
+
+/* Style untuk teks */
+#heart-text {
+  position: absolute;
+  bottom: 50px;  /* Menempatkan teks 20px dari bagian bawah layar */
+  left: 50%;
+  transform: translateX(-50%); /* Agar teks berada di tengah secara horizontal */
+  font-size: 2rem; /* Ukuran font */
+  color: #ff1493; /* Warna teks merah muda */
+  font-family: 'Raleway', sans-serif; /* Font romantis */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Bayangan teks */
+  z-index: 10; /* Agar teks berada di atas canvas */
+  animation: textAnimation 3s ease-in-out infinite, changeText 9s infinite; /* Menambahkan animasi */
+}
+
+/* Gaya untuk tombol Play Music */
+#playButton {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding: 10px 20px;
+  background-color: #ff4081;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+  z-index: 10; /* Memastikan tombol berada di atas canvas dan elemen lainnya */
+}
+
+#playButton:hover {
+  background-color: #e91e63;
+}
+
+/* Animasi teks bergerak naik dan turun */
+@keyframes textAnimation {
+  0% {
+      transform: translateY(-30px);
+      opacity: 0;
+  }
+  50% {
+      transform: translateY(0);
+      opacity: 1;
+  }
+  100% {
+      transform: translateY(30px);
+      opacity: 0;
+  }
+}
